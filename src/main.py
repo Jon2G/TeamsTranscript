@@ -1,0 +1,11 @@
+import ffmpeg
+ 
+#Download audio/video from Meeting recording URL
+
+# Run video stream of the meeting
+# In Web Inspector, Network, filter by 'videomanifest'
+# Copy the URL until 'dash'
+
+input_url = "https://westus31-mediap.svc.ms/transform/videomanifest?provider=spo&inputFormat=mp4&cs=fFNQTw&correlationId=78637ca1-b0cf-7000-c539-a19a7bbdd54d&docid=https%3A%2F%2Fshare.mcd.com%2Fpersonal%2Fprince_marfo_us_mcd_com%2F_api%2Fv2.0%2Fdrives%2Fb%21tz65zNAVmEGUbSABir2yn57YeImkAA5Cq4JZtgJLHxuWeX3rw4dkSqfDoq2ognqa%2Fitems%2F01NA7FERAYZT2X77QWIZGIWTFEQSUBVDOQ%3Ftempauth%3Dv1.eyJzaXRlaWQiOiJjY2I5M2ViNy0xNWQwLTQxOTgtOTQ2ZC0yMDAxOGFiZGIyOWYiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvc2hhcmUubWNkLmNvbUBjMDViOGQ1YS1iODgzLTRhZmItYWU5My1kYjVkYjIzOTkxMWMiLCJleHAiOiIxNzM4MjA4OTg4In0.CgoKBHNuaWQSAjI5EgsI7LmpqJyu4D0QBRoNMjAxLjE0OS4xNy44MiIUbWljcm9zb2Z0LnNoYXJlcG9pbnQqLG9WMHVmMUtaLzV6dWVVbWQ4SXFLMC83cXYzZiswTlZkVllhTzRqamgxelk9MLMBOAFCEKF8Y3jPsABwxTmhmnu91U1KEGhhc2hlZHByb29mdG9rZW5SElsia21zaSIsImR2Y19jbXAiXWIEdHJ1ZWokM2E1NDA3MTgtYzVhZS00MDc4LWI5MmMtODNmZTFkNTFmNmUxcikwaC5mfG1lbWJlcnNoaXB8MTAwMzIwMDNlZDcxMDBlMUBsaXZlLmNvbXoBMMIBJzAjLmZ8bWVtYmVyc2hpcHxsdWlzLnRvcnJlc0BteGMubWNkLmNvbcgBAQ.F6lKUwuh_qxnQURIzrZI0lPoUxzlkDxGlfSgeOjEM9E%26version%3DPublished&psi=b092b172-b940-4da0-83ff-974b5203b6f9&enhanceAudio=true&cTag=%22c%3A%7B7FF5CC18-16FE-4C46-8B4C-A484A81A8DD0%7D%2C2%22&action=Access&part=index&format=dash"
+output_path = "outputaudio.mp3"
+ffmpeg.input(input_url).output(output_path, codec='mp3').run()
