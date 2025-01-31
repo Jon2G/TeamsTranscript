@@ -1,1 +1,2 @@
-console.log('This is background service worker - edit me!');
+import './sw-omnibox.js';
+import './sw-tips.js';

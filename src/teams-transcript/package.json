@@ -43,7 +43,15 @@
             {
                 "name": "background",
                 "src": "./src/**/*.js"
+            },
+            {
+                "name": "content",
+                "src": "./content/**/*.js"
             }
         ]
+    },
+    "dependencies": {
+        "js-ffmpeg": "^0.0.38",
+        "teams-transcript": "file:"
     }
 }
