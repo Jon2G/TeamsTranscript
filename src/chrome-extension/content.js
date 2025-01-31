@@ -1,8 +1,8 @@
 // Popover API https://chromestatus.com/feature/5463833265045504
 
 (async () => {
-  const nav = document.querySelector('.upper-tabs > nav');
-
+  const nav = document.querySelector('.video-engine-overlay');
+  if(nav === null) {return;}
   const { tip } = await chrome.runtime.sendMessage({ greeting: 'tip' });
 
   const tipWidget = createDomElement(`
