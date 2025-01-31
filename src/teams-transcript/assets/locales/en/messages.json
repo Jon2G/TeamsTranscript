@@ -1,0 +1,11 @@
+{
+    "appName": {
+        "message": "teams-transcript"
+    },
+    "appShortName": {
+        "message": "teams-transcript"
+    },
+    "appDescription": {
+        "message": "Gets transcript from teams videos where transcript is disabled"
+    }
+}
