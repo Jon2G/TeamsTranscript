@@ -1,18 +1,21 @@
-# Tutorial: Handling events
+# <img src="public/icons/icon_48.png" width="45" align="left"> Teams Transcript
 
-This sample demonstrates how to handle events with service workers.
+My Chrome Extension
 
-## Overview
+## Features
 
-The extension built allows users to quickly navigate to Chrome API reference pages using the omnibox.
+- Feature 1
+- Feature 2
 
-The events from the following APIs have been handled: `chrome.runtime`, `chrome.omnibox` and `chrome.alarms`.
+## Install
 
-The complete tutorial is available [here](https://developer.chrome.com/docs/extensions/get-started/tutorial/service-worker-events).
+[**Chrome** extension]() <!-- TODO: Add chrome extension link inside parenthesis -->
 
-## Running this extension
+## Contribution
 
-1. Clone this repository.
-2. Load this directory in Chrome as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
-3. Type "api" in the omnibox followed by tab or space and select a suggestion.
-4. Click on "Tip" button in the navigation bar.
+Suggestions and pull requests are welcomed!.
+
+---
+
+This project was bootstrapped with [Chrome Extension CLI](https://github.com/dutiyesh/chrome-extension-cli)
+
