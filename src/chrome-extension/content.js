@@ -1,25 +1,26 @@
-// Popover API https://chromestatus.com/feature/5463833265045504
-
 (async () => {
-  const nav = document.querySelector('.video-engine-overlay');
-  if(nav === null) {return;}
-  const { tip } = await chrome.runtime.sendMessage({ greeting: 'tip' });
+    await new Promise((resolve) => setTimeout(resolve, 5000));
 
+  const nav = document.querySelector('.oneplayer-root');
+  if(nav === null) {return;}
   const tipWidget = createDomElement(`
-    <button type="button" popovertarget="tip-popover" popovertargetaction="show" style="padding: 0 12px; height: 36px;">
-      <span style="display: block; font: var(--devsite-link-font,500 14px/20px var(--devsite-primary-font-family));">Tip</span>
+    <button type="button" style="padding: 10px;background-color: #464EB8;color: white;width: 100px;margin: 5px;">
+      <span style="display: block; font: var(--devsite-link-font,500 14px/20px var(--devsite-primary-font-family));">Download audio</span>
     </button>
   `);
 
-  const popover = createDomElement(
-    `<div id='tip-popover' popover style="margin: auto;">${tip}</div>`
-  );
-
-  document.body.append(popover);
-  nav.append(tipWidget);
+  nav.prepend(tipWidget);
 })();
 
 function createDomElement(html) {
-  const dom = new DOMParser().parseFromString(html, 'text/html');
-  return dom.body.firstElementChild;
+  const dom = new DOMParser().parseFromString(html, 'text/html');  
+  const elem=dom.body.firstElementChild;
+  elem.addEventListener('click', function(){ DownloadAudio();}, false);
+  return elem;
+}
+
+async function DownloadAudio(){
+  console.log("Download Audio");
+    const response = await chrome.runtime.sendMessage({ greeting: 'downloadAudio' });
+    console.log({response});
 }

@@ -13,6 +13,7 @@ chrome.webRequest.onBeforeSendHeaders.addListener((req) => {
       console.log('new url');
       console.log({url});
     }
+    chrome.storage.local.set({ videomanifest: url })
     //TODO: Magic
   }
   return {requestHeaders: req.requestHeaders};
@@ -30,8 +31,5 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
     chrome.storage.local.set({
       apiSuggestions: ['tabs', 'storage', 'scripting']
     });
-    /////
-
-    /////
   }
 });
