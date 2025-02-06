@@ -7,9 +7,6 @@ const PATHS = require('./paths');
 // Merge webpack configuration files
 const config = (env, argv) =>
   merge(common, {
-    externals: {
-  "window":"window"
- } ,
  output: {
     globalObject: 'this',
   },
